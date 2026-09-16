@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #060B18;
+  --bg-secondary: #0F172A;
+  --bg-card: #131D35;
+  --accent-gold: #E8C37B;
+  --accent-gold-light: #F8E6BD;
+  --accent-gold-dark: #C29A45;
+  --text-primary: #FFFFFF;
+  --text-muted: #94A3B8;
+}
+
+[data-theme="emerald"] {
+  --bg-primary: #06110D;
+  --bg-secondary: #0C1D18;
+  --bg-card: #122822;
+  --accent-gold: #E5B869;
+  --accent-gold-light: #F9E4BE;
+  --accent-gold-dark: #B58A3E;
+  --text-primary: #FFFFFF;
+  --text-muted: #A3B8B0;
+}
+
+[data-theme="onyx"] {
+  --bg-primary: #0D0D0D;
+  --bg-secondary: #171717;
+  --bg-card: #1F1F1F;
+  --accent-gold: #D4AF37;
+  --accent-gold-light: #F3E5AB;
+  --accent-gold-dark: #AA820A;
+  --text-primary: #FFFFFF;
+  --text-muted: #B5B5B5;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, .font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Custom Utilities */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF0B8 0%, var(--accent-gold) 50%, var(--accent-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(232, 195, 123, 0.2);
+}
+
+.gold-border-glow:hover {
+  box-shadow: 0 0 25px rgba(232, 195, 123, 0.4);
+}
+
+.glass-nav {
+  background: rgba(6, 11, 24, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232, 195, 123, 0.2);
+}
+
+.glass-card {
+  background: rgba(19, 29, 53, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-gold {
+  background: rgba(19, 29, 53, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--accent-gold);
+}
+
+/* Subtle Pulsing for WhatsApp CTAs */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: pulse-gold 2.5s infinite;
+}
